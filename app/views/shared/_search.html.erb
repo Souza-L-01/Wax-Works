@@ -1,0 +1,8 @@
+<div class="search d-flex">
+  <%= form_with url: releases_path, method: :get, html: { class: "d-flex" } do |form| %>
+    <%= form.text_field :query, value: params[:query], placeholder: "Search for an Album", class: "form-control" %>
+    <%= form.button name: "button", type: :submit, class: "btn btn-flat d-flex" do %>
+      <i class="fas fa-search fa-xl mt-2 pt-1"></i>
+    <% end %>
+  <% end %>
+</div>

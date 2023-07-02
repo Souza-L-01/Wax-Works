@@ -1,0 +1,64 @@
+
+<div class="loginbar">
+  <% if user_signed_in? %>
+    <div class= "signout">
+        <%= link_to "Hello #{current_user.full_name}!" , pages_path%>
+        <span>|</span>
+        <%= link_to "Sign Out" , destroy_user_session_path %>
+    </div>
+    <div class = "lb-right-content p-5 justify-content-right">
+      <button type="button" class="login-add-release"><%= link_to "Add a Listing", new_release_path %></button>
+    <div>
+    </div>
+      <% else %>
+        <div class="loginbar2">
+          <div class= "signout">
+            <%= link_to "Sign Up", new_user_session_path%>
+          </div>
+          <div class = "lb-right-content p-5 justify-content-right">
+            <button type="button" class="login-add-release"><%= link_to "Add a Listing", new_release_path %></button>
+          </div>
+      <% end %>
+    </div>
+</div>
+
+
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid justify-content-between">
+    <div class= "navbar-brand">
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <%= image_tag "logo.png" %>
+          <h3 class="logo-name">WAXWORKS</h3>
+        <% end %>
+    </div>
+
+    <div class="navbar-core-links">
+      <%= link_to releases_path, class: "nav-item" do %>
+        Discover
+      <% end %>
+      <%= link_to listings_path, class: "nav-item" do %>
+        Marketplace
+      <% end %>
+      <%= link_to ownerships_path, class: "nav-item" do %>
+        My Collection
+      <% end %>
+    </div>
+
+    <div class ="navbar-icons">
+      <div class= "search-icon">
+        <%= render 'shared/search' %>
+      </div>
+      <div class="heart-icon">
+        <%= link_to favorites_path, class: "navbar-brand" do %>
+          <i class="fa-regular fa-heart heart-icon fa-lg" style="padding-right: 15px"></i>
+        <% end %>
+      </div>
+      <div class= "cart-icon">
+        <%= link_to orders_path, class: "navbar-brand" do %>
+          <i class="fa-solid fa-cart-shopping"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

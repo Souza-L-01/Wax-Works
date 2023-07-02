@@ -1,0 +1,188 @@
+.release-master {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  height: 660px;
+  margin-top: 102px;
+  z-index: 1020;
+  width: 100%;
+
+  background: radial-gradient(circle at bottom left,transparent 25%,#000000 25.5%, #000000 36%, transparent 37%, transparent 100%),radial-gradient(circle at top right,transparent 34%,#000000 34.5%, #000000 45.5%, transparent 46%, transparent 100%);
+  background-size: 1em 1em;
+  background-color: #ffffff;
+  opacity: 1
+}
+
+.release-image {
+ position: relative;
+}
+
+.release-image img {
+  height: 600px;
+  width: 600px;
+  object-fit: cover;
+  padding: 0px;
+  border-radius: 20px 0 0 20px;
+}
+
+.release-information {
+  height: 600px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 0 20px 20px 0;
+}
+
+.release-information-content {
+  height: 540px;
+  width: 96%;
+  background-color: #ffffff;
+  padding: 30px 30px 0 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.release-primary-info {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.track-listing ol {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 120px;
+}
+
+.track-listing li {
+  font-size: 16px;
+  padding-right: 10px;
+}
+
+.release-icons {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: 5px;
+}
+
+.collection-button button {
+  border: none;
+  background: none;
+}
+
+.release-add-listing-button {
+  a {
+  text-decoration: none;
+  color: white;
+}
+}
+
+////// Listings Style Below////////
+
+.listings-bar {
+  background-color: #A5ACAF;
+  padding: 10px 20px 10px 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.available-listings {
+  margin: 30px;
+}
+
+.listing-card {
+  display: flex;
+  justify-content: space-between;
+  height: 200px;
+  width: auto;
+  margin: 30px;
+  border: solid;
+  border-radius: 10px 100px 100px 10px;
+}
+
+.listing-image {
+  width: 200px;
+}
+
+.listing-image img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.listing-album  {
+  margin: 10px;
+  width: 285px;
+}
+
+.listing-price {
+  background-color: $yellow;
+  border-radius: 6px;
+}
+
+.listing-details {
+  margin: 10px;
+  width: 350px;
+}
+
+.listing-seller {
+  width: 285px;
+  margin: 10px;
+}
+
+.listing-button {
+  display: block;
+  text-align: center;
+  margin: 15px;
+  width: 170px;
+  height: 170px;
+  border-radius: 85px;
+  border: solid;
+}
+
+.listing-button h5 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.listing-button a {
+  color: black;
+}
+.listing-button:hover {
+  border-color: #394867;
+  border-width: 8px;
+}
+
+.listing-button:hover a {
+  color: black;
+}
+
+//////Reivews Style////
+
+.all-release-reviews {
+  height: 300px;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  margin: 30px auto;
+  justify-content: flex-start;
+}
+
+.review-card {
+  width: 450px;
+  border: solid;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 20px;
+}
+
+.delete-review button {
+  border: none;
+  background: none;
+}

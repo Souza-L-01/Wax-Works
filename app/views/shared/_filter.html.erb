@@ -1,0 +1,54 @@
+<div class="filter ps-1 pt-3">
+    <div class="price-filter"><h5>Price</h5></div>
+             <%= form_with url: listings_path, method: :get, html: {class: "mb-4"} do |f| %>
+
+
+
+
+          <%= f.label :query, "Max Price" %>
+          <%= f.text_field :max,
+                           class: "form-control",
+                           value: params[:max]
+                           %>
+                           <br>
+
+
+        <h5>Availability </h5>
+        <%= f.radio_button :availability, "Available" %>
+              <%= f.label :availability_available, "Available"  %>
+
+            <br>
+             <br>
+
+          <h5>Album Condition</h5>
+          <%= f.radio_button :condition , "Excellent"   %>
+            <%= f.label :condition_excellent, "Excellent"  %>
+            <br>
+          <%= f.radio_button :condition , "Good"   %>
+          <%= f.label :condition_good, "Good"  %>
+          <br>
+          <%= f.radio_button :condition , "Fair"   %>
+          <%= f.label :condition_fair, "Fair"  %>
+          <br>
+          <%= f.radio_button :condition , "Damaged"  %>
+          <%= f.label :condition_damaged, "Damaged" %>
+          <br>
+          <br>
+       <h5> Sleeve Condition</h5>
+
+            <%= f.radio_button :sleeve_condition , "Excellent"   %>
+            <%= f.label :sleeve_condition_excellent, "Excellent"  %>
+            <br>
+          <%= f.radio_button :sleeve_condition , "Good"   %>
+          <%= f.label :sleeve_condition_good, "Good"  %>
+          <br>
+          <%= f.radio_button :sleeve_condition , "Fair"   %>
+          <%= f.label :sleeve_condition_fair, "Fair"  %>
+          <br>
+          <%= f.radio_button :sleeve_condition , "Damaged"  %>
+          <%= f.label :sleeve_condition_damaged, "Damaged" %>
+          <br>
+          <br>
+          <%= f.submit "Filter" %>
+        <% end %>
+  </div>

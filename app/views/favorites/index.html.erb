@@ -1,0 +1,29 @@
+<% content_for :meta_title, "#{@favorites.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @favorites.name %>
+<%# <% content_for :meta_image, cl_image_path(@offer.photo.path) %>
+
+<br>
+<br>
+<br>
+
+
+<h1 class ="mt-5 favorite-title-intro">Favorites</h1>
+    <div class="favorite-collections mt-5">
+  <% if @favorites.empty? %>
+    <hr>
+    <i><h2>No favorites available, visit <%= link_to 'Marketplace', listings_path %> to add a few!</h2></i>
+  <% else %>
+      <% for favorite in @favorites %>
+        <div class="favorite-release-card">
+            <%= link_to url_for(favorite.release) do %>
+              <div class="favorite-album-thumbnail" style="background-image: url('<%= favorite.release.url %>');">
+            <% end %>
+            <div class="favorite-album-copy">
+              <p class="favorite-title"><%= favorite.release.title %></p>
+              <p class="favorite-artist"><%= favorite.release.artist %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>

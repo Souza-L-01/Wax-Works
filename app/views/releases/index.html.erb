@@ -1,0 +1,124 @@
+<div class="release-banner d-flex">
+      <h2 class="banner-copy">Discover</h2>
+      <h2 class="banner-copy">your</h2>
+      <h2 class="banner-copy">wax.</h2>
+</div>
+
+
+
+<div class="first-bar title-bar">
+  <div>
+    <h4><strong>My Top Artists</strong></h4>
+  </div>
+</div>
+<div class="all-releases">
+  <div class="releases">
+     <div class="top-card">
+      <h5>My top Artists</h5>
+        <ol>
+          <% for artist in @user.top_artists.first(5) %>
+            <li><%= artist %></li>
+          <% end %>
+        </ol>
+      </div>
+    <% for artist in @user.top_artists %>
+      <% @releases.each do |release| %>
+        <% if release.artist == artist %>
+        <div class="release-card">
+          <div class="album-thumbnail">
+            <%= link_to url_for(release) do %>
+              <%= image_tag release.url %>
+            <% end %>
+          </div>
+          <div class="album-content">
+            <div class="top">
+              <div class="album-copy">
+                <h4><%= release.title %></h4>
+                <p><%= release.artist %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+ </div>
+
+ <div class="title-bar">
+  <div>
+    <h4><strong>My Top Albums</strong></h4>
+  </div>
+</div>
+<div class="all-releases">
+  <div class="releases">
+    <div class="top-card">
+      <h5>My top Albums</h5>
+        <ol>
+          <% for album in @user.top_albums.first(5) %>
+            <li><%= album %></li>
+          <% end %>
+        </ol>
+      </div>
+    <% for album in @user.top_albums %>
+      <% @releases.each do |release| %>
+        <% if release.title.include?(album) %>
+        <div class="release-card">
+          <div class="album-thumbnail">
+            <%= link_to url_for(release) do %>
+              <%= image_tag release.url %>
+            <% end %>
+          </div>
+          <div class="album-content">
+            <div class="top">
+              <div class="album-copy">
+                <h4><%= release.title %></h4>
+                <p><%= release.artist %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+ </div>
+
+  <div class="title-bar">
+  <div>
+    <h4><strong>My Top Saved Albums</strong></h4>
+  </div>
+</div>
+<div class="all-releases">
+  <div class="releases">
+    <div class="top-card">
+      <h5>My top Saved Albums</h5>
+        <ol>
+          <% for album in @user.saved_albums.first(5) %>
+            <li><%= album %></li>
+          <% end %>
+        </ol>
+      </div>
+    <% for album in @user.saved_albums %>
+      <% @releases.each do |release| %>
+        <% if album.include?(release.title) %>
+        <div class="release-card">
+          <div class="album-thumbnail">
+            <%= link_to url_for(release) do %>
+              <%= image_tag release.url %>
+            <% end %>
+          </div>
+          <div class="album-content">
+            <div class="top">
+              <div class="album-copy">
+                <h4><%= release.title %></h4>
+                <p><%= release.artist %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+ </div>
